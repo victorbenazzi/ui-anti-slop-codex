@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "UI Design",
+      "description": "Codex workflow for visual contracts, surface routing, DESIGN.md tokens, and screenshot QA.",
+      "skills": ["ui-anti-slop-codex"]
+    }
+  ]
+}

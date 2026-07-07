@@ -1,0 +1,6 @@
+interface:
+  display_name: "UI Anti Slop Codex"
+  short_description: "Blocks generic UI with visual contracts"
+  default_prompt: "Use $ui-anti-slop-codex to design or review this UI with a visual contract before implementation."
+policy:
+  allow_implicit_invocation: true
