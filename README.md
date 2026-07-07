@@ -29,9 +29,10 @@ When active, the skill requires the agent to:
 3. Load the matching surface contract and reference family.
 4. Declare a compact Visual Contract before substantial UI edits.
 5. Prefer existing `DESIGN.md`, design tokens, components, fonts, and icon libraries.
-6. Implement the UI against the contract.
-7. Run browser or screenshot verification when feasible.
-8. Fix visible issues before the final response.
+6. Keep CRUD browsing and CRUD creation as separate interaction modes unless inline entry is the product behavior.
+7. Implement the UI against the contract.
+8. Run browser or screenshot verification when feasible.
+9. Fix visible issues before the final response.
 
 ## Install
 
@@ -114,12 +115,27 @@ Visual Contract
 - Design source:
 - Density:
 - Layout:
+- CRUD create mode:
 - Required states:
 - Forbidden tells:
 - Verification:
 ```
 
 This makes the intended UI direction inspectable before the agent starts writing code.
+
+## CRUD Creation Flow Rule
+
+For admin, dashboard, platform app, and data table surfaces, the skill treats browsing records and creating records as different interaction modes.
+
+Default behavior:
+
+1. Keep the table or list as the primary surface for inspection and row actions.
+2. Use a modal, drawer, or dedicated create page for new records.
+3. Use a modal for short creation flows that can be completed without losing table context.
+4. Use a dedicated page for long, multi-step, permission-heavy, or high-risk creation flows.
+5. Use inline creation only for tiny single-field additions or spreadsheet-like workflows.
+
+The Visual Contract must explicitly state whether create happens inline, in a modal, in a drawer, or on a dedicated page, with a short justification based on task complexity and record-scanning needs.
 
 ## DESIGN.md Support
 

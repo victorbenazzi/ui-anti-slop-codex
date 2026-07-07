@@ -49,18 +49,26 @@ Visual Contract
 - Design source: Existing repo components and inferred reference family
 - Density: High
 - Layout: Sidebar, saved views, filter bar, sortable lead table, detail panel
+- CRUD create mode: Modal for short lead creation so the table remains the primary scanning surface
 - Required states: Loading, empty, error, selected, disabled, bulk selected, permission denied
 - Forbidden tells: Marketing hero, decorative KPI cards, fake metrics, hidden row actions
 - Verification: Desktop and mobile screenshots, table overflow, focus order, contrast
 ```
+
+## CRUD Creation Flow Rule
+
+For admin, dashboard, platform app, and data table surfaces, the table or list should remain the primary browsing surface. New records should use a modal, drawer, or dedicated page by default. Inline creation should be reserved for tiny single-field additions or spreadsheet-like workflows where inline entry is the core behavior.
+
+Forbidden patterns include sticky "new record" forms beside tables, dashboards split between record management and blank creation fields, and create UI that reduces scan speed or hides row actions.
 
 ## Tips For Better Results
 
 1. Include the real business job of the screen.
 2. Say whether the screen is public marketing or repeated-use product UI.
 3. Provide existing screenshots or brand references when available.
-4. Ask for states explicitly.
-5. Ask for visual verification explicitly.
+4. For CRUD, say whether creation should happen in a modal, drawer, page, or inline flow.
+5. Ask for states explicitly.
+6. Ask for visual verification explicitly.
 
 ## Português
 
@@ -98,5 +106,6 @@ Use $ui-anti-slop-codex e o DESIGN.md do repo. Não invente um sistema visual no
 1. Diga o trabalho real que a tela precisa fazer.
 2. Separe landing pública de produto usado todo dia.
 3. Envie screenshots ou referências quando tiver.
-4. Peça estados de loading, vazio, erro, selecionado, desabilitado e mobile.
-5. Peça verificação visual antes da resposta final.
+4. Para CRUD, diga se a criacao deve acontecer em modal, drawer, pagina ou fluxo inline.
+5. Peça estados de loading, vazio, erro, selecionado, desabilitado e mobile.
+6. Peça verificação visual antes da resposta final.

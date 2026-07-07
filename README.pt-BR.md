@@ -68,12 +68,27 @@ Visual Contract
 - Design source:
 - Density:
 - Layout:
+- CRUD create mode:
 - Required states:
 - Forbidden tells:
 - Verification:
 ```
 
 Isso evita que o agente comece a codar uma interface genérica sem decidir primeiro que tipo de tela está construindo.
+
+## Regra De Criacao CRUD
+
+Para admins, dashboards, plataformas e tabelas de dados, navegar registros e criar registros sao modos de interacao diferentes.
+
+Comportamento padrao:
+
+1. Manter tabela ou lista como superficie principal para inspecao e acoes de linha.
+2. Usar modal, drawer ou pagina dedicada para novos registros.
+3. Usar modal para criacoes curtas que podem terminar sem perder o contexto da tabela.
+4. Usar pagina dedicada para criacoes longas, multi-etapa, com permissoes complexas ou de alto risco.
+5. Usar criacao inline apenas para adicoes minimas de um campo ou fluxos tipo planilha.
+
+No Visual Contract, o agente precisa declarar se a criacao acontece inline, em modal, em drawer ou em pagina dedicada. Tambem precisa justificar a escolha com base na complexidade da tarefa e na necessidade de leitura rapida dos registros.
 
 ## Dicas
 

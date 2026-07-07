@@ -37,12 +37,14 @@ Visual Contract
 - Design source:
 - Density:
 - Layout:
+- CRUD create mode:
 - Required states:
 - Forbidden tells:
 - Verification:
 ```
 
    - `Design source` must say whether the source is existing repo UI, `DESIGN.md`, user reference, generated reference, or an inferred family.
+   - `CRUD create mode` is required when the surface includes records, tables, admin workflows, dashboards, or platform CRUD. State inline, modal, drawer, or dedicated page, and justify the choice by task complexity and record-scanning needs.
    - `Forbidden tells` must be specific to this surface, not a generic list.
 
 5. **Implement against the contract**
@@ -62,6 +64,7 @@ Visual Contract
 - Tokens first. If `DESIGN.md` or design tokens exist, they are the design source of truth.
 - Product proof beats decoration. Use real product UI, real media, real data states, or explicit placeholders. Avoid div-based fake screenshots.
 - Density must match usage frequency. Daily tools need scan speed. Public pages need offer clarity and proof.
+- CRUD browsing and CRUD creation are different interaction modes. Do not place a persistent create form beside or below a primary table or list unless inline entry is the core product behavior.
 - One visual system per surface. Do not mix unrelated palettes, icon families, radius systems, shadows, and typography voices.
 - No silent generic defaults. Ban default purple gradients, decorative cards, fake metrics, nested cards, vague copy, invisible button text, and unexplained large whitespace unless the contract justifies them.
 - Verification is part of the task. Do not finish while text overlaps, mobile breaks, charts are unreadable, buttons lack contrast, or the design contradicts the contract.

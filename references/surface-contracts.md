@@ -2,6 +2,30 @@
 
 Classify the UI before choosing style. Use the matching contract to decide density, layout, states, proof, and forbidden tells.
 
+## CRUD Creation Flow Rule
+
+For admin, dashboard, platform app, and data table surfaces, browsing records and creating records are different interaction modes.
+
+Do not place a full create form beside or below the primary table or list by default. A persistent create form competes with scanning, filtering, comparing, and acting on existing records.
+
+Default behavior:
+
+- Keep the table or list as the primary surface for inspection and row actions.
+- Use a modal, drawer, or dedicated create page for new records.
+- Use a modal for short creation flows that can be completed without losing table context.
+- Use a drawer when creation needs supporting context but should not fully leave the record list.
+- Use a dedicated page for long, multi-step, permission-heavy, or high-risk creation flows.
+- Use inline creation only for tiny single-field additions or spreadsheet-like workflows where inline entry is the core product behavior.
+
+Forbidden tells:
+
+- A sticky "new record" form beside a data table.
+- A dashboard split between record management and blank creation fields.
+- Empty form controls occupying permanent screen real estate before the user has chosen to create.
+- Creation UI that reduces table width, hides row actions, or weakens scan speed.
+
+Visual Contract requirement: when the surface includes CRUD, explicitly state whether create happens inline, in a modal, in a drawer, or on a dedicated page. Justify that choice based on task complexity and record-scanning needs.
+
 ## Landing Or Marketing Page
 
 Primary job: convert attention into qualified intent.
@@ -34,12 +58,14 @@ Must include:
 - Primary workflow visible without marketing explanation.
 - Clear actions, state, selection, loading, empty, error, disabled, and destructive flows.
 - Efficient scanning through tables, lists, panels, or canvases.
+- CRUD creation separated from record browsing unless inline entry is the core product behavior.
 - Stable layout dimensions for controls and dynamic content.
 
 Avoid:
 
 - Marketing-style hero sections inside the app.
 - Oversized decorative KPI cards.
+- Persistent create forms competing with the primary list or table.
 - Empty whitespace that slows daily operation.
 - Banners explaining obvious features.
 - Controls that exist only to look complete.
@@ -55,6 +81,7 @@ Must include:
 - Metrics that answer a decision question.
 - Filters, time range, segmentation, or drilldown when data changes the answer.
 - Tables or lists for exact inspection, not charts alone.
+- Creation flows that preserve monitoring and drilldown context when CRUD exists.
 - Clear empty, loading, stale, and error data states.
 - Chart legends, labels, units, and accessible color meaning.
 
@@ -63,6 +90,7 @@ Avoid:
 - KPI theater with large numbers that do not connect to action.
 - Four-card stat rows as the whole product.
 - Chart decoration that hides the data.
+- Blank create forms that reduce room for comparison or drilldown.
 - Color-only meaning.
 - Vanity metrics without workflow.
 
@@ -76,6 +104,7 @@ Must include:
 
 - Dense tables with sorting, filtering, pagination, and bulk actions when data volume implies them.
 - Clear row actions and destructive action confirmation.
+- Create actions routed to a modal, drawer, or dedicated page based on complexity and risk.
 - Audit context, ownership, status, permissions, or timestamps where relevant.
 - Fast empty and error recovery paths.
 - Keyboard and pointer usability.
@@ -84,6 +113,7 @@ Avoid:
 
 - Consumer marketing visuals.
 - Oversized cards for record management.
+- Sticky create forms beside operational tables.
 - Hidden critical actions.
 - Decorative illustration empty states when users need recovery.
 
